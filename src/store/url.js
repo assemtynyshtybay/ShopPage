@@ -1,0 +1,1 @@
+export const DEFAULT_CHARACTERS_URL = 'https://rickandmortyapi.com/api/character'

@@ -17,7 +17,6 @@ function App() {
         <Auth.Provider value={{ token, setToken }}>
             <div className="App">
                 <Navbar />
-
                 <Routes>
                     <Route path="/movies" element={<MoviesPage />} />
                     <Route path="/movies/:id" element={<MoviePage />} />
