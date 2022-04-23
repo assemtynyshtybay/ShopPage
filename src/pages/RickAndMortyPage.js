@@ -55,7 +55,7 @@ export function RickAndMortyPage() {
   }, [dispatch])
   const searchCharacter = useCallback(({ page = 1, sort = sortBy } = {}) => {
     dispatch(fetchRickAndMorty({page, sort}))
-  }, [dispatch]);
+  }, [dispatch, sortBy]);
 
     return (
         <div>

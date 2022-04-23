@@ -44,6 +44,12 @@ export const Navbar = () => {
                         >
                             ToDo
                         </Button>
+                        <Button
+                            onClick={() => navigate('/shop')}
+                            sx={{my: 2, color: 'white', display: 'block'}}
+                        >
+                            Shop
+                        </Button>
                     </Box>
 
                     <Box sx={{flexGrow: 0}}>

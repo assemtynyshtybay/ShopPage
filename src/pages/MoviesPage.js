@@ -74,7 +74,7 @@ export function MoviesPage() {
               ))}
           </Grid>
 
-          <Pagination count={pageInfo.total_pages} page={pageInfo.page} onChange={(e, value) => searchMovies({ page: value })}/>
+            <Pagination count={pageInfo.total_pages} page={pageInfo.page} onChange={(e, value) => searchMovies({ page: value })}/>
       </Container>
   )
 }

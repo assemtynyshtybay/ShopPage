@@ -9,6 +9,7 @@ import {Auth} from "./context/Auth";
 import {useState} from "react";
 import {Counter} from "./components/Counter";
 import {TodoPage} from "./pages/TodoPage";
+import Shop from './pages/shop';
 
 function App() {
     const [token, setToken] = useState(localStorage.getItem('idToken'))
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/signin/" element={<SignInPage />} />
                     <Route path="/counter/" element={<Counter />} />
                     <Route path="/todo" element={<TodoPage />} />
+                    <Route path="/shop" element={<Shop />} />
                 </Routes>
             </div>
         </Auth.Provider>
