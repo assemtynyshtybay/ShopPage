@@ -32,7 +32,8 @@ export function ProductItem({ product, onAddToBasket }){
       <Image src={product.image} alt="" />
       <Title>{product.title}</Title>
       <Price>{product.price}$</Price>
-      <Button onClick={onAddToBasket}>Add to Basket</Button>
+      <Button onClick={onAddToBasket}
+      >Add to Basket</Button>
     </Box>
   );
 }

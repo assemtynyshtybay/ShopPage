@@ -66,7 +66,7 @@ export function MoviesPage() {
                   <Button onClick={() => searchMovies()}>Search</Button>
               </div>
           </div>
-          <Grid container spacing={2}>
+          <Grid container spacing={{xs: 2, md: 3}} columns={{xs: 3, md: 6, lg: 12}}>
               {movies.map((movie) => (
                   <Grid item xs={12 / 5}>
                       <MovieItem key={movie.id} movie={movie} />
@@ -74,7 +74,7 @@ export function MoviesPage() {
               ))}
           </Grid>
 
-            <Pagination count={pageInfo.total_pages} page={pageInfo.page} onChange={(e, value) => searchMovies({ page: value })}/>
+          <Pagination count={pageInfo.total_pages} page={pageInfo.page} onChange={(e, value) => searchMovies({ page: value })}/>
       </Container>
   )
 }

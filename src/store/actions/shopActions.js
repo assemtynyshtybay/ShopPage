@@ -11,8 +11,9 @@ export const fetchShop = () => dispatch => {
           payload: res.data,
         }
       )
+      
     })
-
+    
 }
 export const addToBasket = (product) => (dispatch) => {
   dispatch({

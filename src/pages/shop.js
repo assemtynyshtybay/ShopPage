@@ -17,7 +17,7 @@ function Shop() {
 
   return(
     <Container>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} columns={{xs: 3, md: 6, lg: 12}}>
         {products && products.map((item) => (
           <Grid item xs={3} key={item.id}>
             <ProductItem product={item} onAddToBasket={() => handleAddToBasket(item)}/>
