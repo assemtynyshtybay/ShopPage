@@ -37,13 +37,15 @@ const BasketWrapper = styled('div')`
   flex-wrap: initial;
   align-items: flex-start;
   justify-content: flex-start;
-  color: rgb(0, 0, 0);
   font-size: 16px;
   line-height: 1.4;
   font-weight: 400;
 `
 const BasketIcon = styled('span')`
   font-size: 40px;
+`
+const Count = styled('span')`
+  right: 5px;
 `
 const CloseIcon = styled('span')`
   position: fixed;
@@ -223,6 +225,7 @@ export function Basket() {
         <Wrapper onClick={(e) => {
           setRight(true)
         }}>
+          <Count>{totalInfo.amount}</Count>
           <BasketIcon>🛒</BasketIcon>
         </Wrapper>
         <Drawer
