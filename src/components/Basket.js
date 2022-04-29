@@ -1,7 +1,7 @@
 import {styled} from "@mui/material";
 import {useState, useCallback, useMemo} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import { REMOVE_BASKET } from "../store/types/shop";
+import { OPEN_MODAL, REMOVE_BASKET } from "../store/types/shop";
 import { incCounter, decCounter } from "../store/actions/shopActions";
 import {Drawer} from '@mui/material';
 
@@ -91,6 +91,7 @@ const BasketBottom = styled('div')`
   transition: transform 80ms ease-out 0s, opacity;
   align-items:center;
 `
+
 const ProductBottom = styled('div')`
   display: flex;
   flex-direction: row;
@@ -199,6 +200,12 @@ export function BasketItem({ product, count, counterInc, counterDec, onRemove, t
 export function Basket() {
   const [right, setRight] = useState(false);
   const dispatch = useDispatch()
+  const handleOpen = useCallback(
+    () => {
+      dispatch({type: OPEN_MODAL})
+    },
+    [dispatch],
+  )
   const basket = useSelector((state) => state.shop.basket)
   const totalInfo = {}
   const handleRemoveFromBasket = useCallback((id) => {
@@ -254,7 +261,7 @@ export function Basket() {
             </Content>
             <BasketBottom>
               <Text>${totalInfo.totalPrice.toFixed(2)}</Text>
-              <ConfirmButton>Confirm</ConfirmButton>
+              <ConfirmButton type="button" onClick={handleOpen}>Confirm</ConfirmButton>
             </BasketBottom>
           </BasketWrapper>
           }

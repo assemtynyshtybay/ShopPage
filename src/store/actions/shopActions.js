@@ -1,16 +1,24 @@
 import axios from "axios";
 
-import { SET_PRODUCTS, ADD_TO_BASKET, INC_IN_BASKET, DEC_IN_BASKET} from "../types/shop"
+import { SET_PRODUCTS, ADD_TO_BASKET, INC_IN_BASKET, DEC_IN_BASKET, IS_LOAD} from "../types/shop"
 
 export const fetchShop = () => dispatch => {
   axios.get('https://fakestoreapi.com/products')
     .then((res) => {
-      dispatch(
+      console.log(res)
+      if(res.status === 200){
+        dispatch(
+          {
+            type: IS_LOAD,
+          }
+        )
+        dispatch(
         {
           type: SET_PRODUCTS,
           payload: res.data,
-        }
-      )
+        })  
+      }
+        
       
     })
     

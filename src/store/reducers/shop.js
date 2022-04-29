@@ -1,8 +1,10 @@
-import { SET_PRODUCTS, ADD_TO_BASKET, REMOVE_BASKET, INC_IN_BASKET, DEC_IN_BASKET } from "../types/shop";
+import { SET_PRODUCTS, ADD_TO_BASKET, REMOVE_BASKET, INC_IN_BASKET, DEC_IN_BASKET,OPEN_MODAL, IS_LOAD, CLOSE_MODAL } from "../types/shop";
 
 const initState = {
   products: [],
   basket: JSON.parse(localStorage.getItem('basket')) || [],
+  modalOpen: false,
+  isLoad: true,
 }
 
 // basket = {id: //}[]
@@ -34,6 +36,15 @@ export const shop = (state=initState, action) => {
       const prodInc = newState.basket.find((item) => action.payload === item.product.id)
       prodInc.count += 1;
       newState.basket = [...newState.basket];
+      break;
+    case OPEN_MODAL:
+      newState.modalOpen = true;
+      break;
+    case CLOSE_MODAL:
+      newState.modalOpen = false;
+      break
+    case IS_LOAD:
+      newState.isLoad = false;
       break;
     default:
       return state
