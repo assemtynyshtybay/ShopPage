@@ -6,7 +6,7 @@ const initState = {
     page: 1,
     total_page: 0,
   },
-  sortBy: '',
+  sortBy: 'alive',
 }
 
 export const RickAndMortyReducer = (state = initState, action) => {
